@@ -143,7 +143,7 @@ This project simulates a banking-style credit risk workflow applied to a loan da
 
 ## Final Conclusion
 
-This project demonstrates that loan default risk is more strongly linked to **financing pressure and credit quality** than income alone. Variables such as `Interest_rate_spread`, `Upfront_charges`, `rate_of_interest`, `LTV`, `dtir1`, and `credit_type_EQUI` consistently emerged as the strongest signals across all models.
+This project demonstrates that loan default risk is more strongly linked to **financing pressure and credit quality** than income alone. Variables such as `Interest_rate_spread`, `Upfront_charges`, `rate_of_interest`, `LTV`, `dtir1`, and `credit_type_EQUI` emerged as important signals across the supervised analysis, especially in the tree-based models.
 
 The K-Means clustering further supported this by showing that borrowers with comparable incomes could belong to very different risk profiles depending on their credit score, leverage, and debt burden.
 
