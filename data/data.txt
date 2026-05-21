@@ -1,7 +1,0 @@
-## Dataset
-
-The dataset used in this project can be downloaded from Kaggle:
-
-https://www.kaggle.com/datasets/lalit7881/loan-risk-analysis-dataset
-
-Place the dataset inside the `data/` folder before running the notebook.
