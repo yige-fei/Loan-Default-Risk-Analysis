@@ -161,16 +161,6 @@ Taken together, this project illustrates a simplified but grounded banking credi
 
 ---
 
-## Repository Structure
-
-```
-├── loanData.ipynb        # Main project notebook
-├── Loan_Default.csv      # Dataset (not included — see source)
-└── README.md
-```
-
----
-
 ## Disclaimer
 
 This project is for educational and portfolio purposes only. It does not constitute financial or lending advice.
