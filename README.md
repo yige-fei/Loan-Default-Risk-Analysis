@@ -1,7 +1,5 @@
 # Loan Default Prediction & Borrower Segmentation
 
-A credit risk analytics project that predicts borrower default risk and segments borrowers into meaningful financial profiles using supervised and unsupervised machine learning.
-
 ---
 
 ## Project Overview
