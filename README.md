@@ -1,7 +1,5 @@
 # Loan Default Prediction & Borrower Segmentation
 
----
-
 ## Project Overview
 
 This project simulates a banking-style credit risk workflow applied to a loan dataset. The goal is to identify borrowers at risk of default and uncover hidden borrower profiles using both predictive modelling and clustering techniques.
