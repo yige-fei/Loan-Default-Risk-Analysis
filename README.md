@@ -139,11 +139,50 @@ This project simulates a banking-style credit risk workflow applied to a loan da
 
 ## Final Conclusion
 
-This project demonstrates that loan default risk is more strongly linked to **financing pressure and credit quality** than income alone. Variables such as `Interest_rate_spread`, `Upfront_charges`, `rate_of_interest`, `LTV`, `dtir1`, and `credit_type_EQUI` emerged as important signals across the supervised analysis, especially in the tree-based models.
+This project demonstrates that loan default risk is more strongly linked to **financing pressure and credit quality** than income alone. Variables such as `Interest_rate_spread`, `Upfront_charges`, `rate_of_interest`, `LTV`, `dtir1`, and `credit_type_EQUI` emerged as important signals across the supervised analysis.
 
-The K-Means clustering further supported this by showing that borrowers with comparable incomes could belong to very different risk profiles depending on their credit score, leverage, and debt burden.
+However, the near-perfect performance of Random Forest and XGBoost suggests possible **data leakage**, especially because several highly predictive variables are related to loan pricing and lender risk assessment. This means the tree-based models should be treated as useful for learning and feature exploration, but not as final production-ready credit risk models.
 
-Taken together, this project illustrates a simplified but grounded banking credit risk analytics workflow — combining **default prediction**, **model interpretation**, and **borrower segmentation**.
+The K-Means clustering further supported the idea that borrowers with comparable incomes could belong to very different financial profiles depending on credit score, leverage, and debt burden. However, because the silhouette score was low, the clustering results should be treated as exploratory borrower profiling rather than a final segmentation model.
+
+Taken together, this project illustrates a simplified but grounded banking credit risk analytics workflow — combining **default prediction**, **model interpretation**, **borrower segmentation**, and a critical review of model limitations.
+
+---
+
+## Project Limitations and Data Leakage Considerations
+
+Although the Random Forest and XGBoost models achieved near-perfect ROC-AUC scores, these results should be interpreted with caution.
+
+Several of the most important features identified by the tree-based models were loan pricing and lender-assessment variables, including:
+
+- `Interest_rate_spread`
+- `Upfront_charges`
+- `rate_of_interest`
+- `credit_type_EQUI`
+
+These variables may already contain information about the lender’s assessment of borrower risk. For example, borrowers who were considered riskier may have been assigned higher interest rates, wider interest rate spreads, or higher upfront charges.
+
+As a result, these features may introduce **data leakage**, where the model learns from variables that indirectly encode the lender’s prior risk assessment rather than learning only from information available before the loan decision.
+
+Because of this, the near-perfect performance of Random Forest and XGBoost may not reflect real-world predictive performance. In an actual banking or credit risk setting, further validation would be required, such as:
+
+- removing or testing pricing-related variables separately;
+- comparing model performance before and after removing potential leakage features;
+- validating the model on out-of-time or unseen loan data;
+- using only features available before loan approval or pricing decisions;
+- prioritising explainability, auditability, and regulatory interpretability.
+
+Therefore, while Random Forest and XGBoost were useful for learning feature importance and model behaviour, they should not be treated as final production-ready credit risk models.
+
+The Logistic Regression model, with around **0.87 accuracy** and **0.86 ROC-AUC**, may represent a more realistic and interpretable baseline for this educational project because its performance was strong but not suspiciously perfect.
+
+The unsupervised learning section also has limitations. K-Means clustering was useful for exploring borrower profiles, but the silhouette score was only around **0.136**, which suggests that the clusters were not strongly separated.
+
+This means the three borrower groups should be treated as **exploratory segments** rather than final customer classifications. The clusters help show broad borrower patterns, such as stronger credit borrowers, higher-risk borrowers, and premium high-capacity borrowers, but they should not be used as final credit decision groups.
+
+K-Means is also distance-based and assumes that clusters are roughly separated in feature space. Real borrower behaviour may be more complex, overlapping, and influenced by factors not captured in the dataset. In a real banking setting, further segmentation methods such as hierarchical clustering, Gaussian Mixture Models, or business-rule-based segmentation could be tested and compared.
+
+Overall, the supervised learning results are useful for understanding predictive signals, while the unsupervised learning results are useful for early-stage borrower profiling. However, both should be treated as educational and exploratory rather than final credit decision systems.
 
 ---
 
