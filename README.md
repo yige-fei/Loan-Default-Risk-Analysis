@@ -137,18 +137,6 @@ This project simulates a banking-style credit risk workflow applied to a loan da
 
 ---
 
-## Final Conclusion
-
-This project demonstrates that loan default risk is more strongly linked to **financing pressure and credit quality** than income alone. Variables such as `Interest_rate_spread`, `Upfront_charges`, `rate_of_interest`, `LTV`, `dtir1`, and `credit_type_EQUI` emerged as important signals across the supervised analysis.
-
-However, the near-perfect performance of Random Forest and XGBoost suggests possible **data leakage**, especially because several highly predictive variables are related to loan pricing and lender risk assessment. This means the tree-based models should be treated as useful for learning and feature exploration, but not as final production-ready credit risk models.
-
-The K-Means clustering further supported the idea that borrowers with comparable incomes could belong to very different financial profiles depending on credit score, leverage, and debt burden. However, because the silhouette score was low, the clustering results should be treated as exploratory borrower profiling rather than a final segmentation model.
-
-Taken together, this project illustrates a simplified but grounded banking credit risk analytics workflow — combining **default prediction**, **model interpretation**, **borrower segmentation**, and a critical review of model limitations.
-
----
-
 ## Project Limitations and Data Leakage Considerations
 
 Although the Random Forest and XGBoost models achieved near-perfect ROC-AUC scores, these results should be interpreted with caution.
@@ -185,6 +173,16 @@ K-Means is also distance-based and assumes that clusters are roughly separated i
 Overall, the supervised learning results are useful for understanding predictive signals, while the unsupervised learning results are useful for early-stage borrower profiling. However, both should be treated as educational and exploratory rather than final credit decision systems.
 
 ---
+
+## Final Conclusion
+
+This project demonstrates that loan default risk is more strongly linked to **financing pressure and credit quality** than income alone. Variables such as `Interest_rate_spread`, `Upfront_charges`, `rate_of_interest`, `LTV`, `dtir1`, and `credit_type_EQUI` emerged as important signals across the supervised analysis.
+
+However, the near-perfect performance of Random Forest and XGBoost suggests possible **data leakage**, especially because several highly predictive variables are related to loan pricing and lender risk assessment. This means the tree-based models should be treated as useful for learning and feature exploration, but not as final production-ready credit risk models.
+
+The K-Means clustering further supported the idea that borrowers with comparable incomes could belong to very different financial profiles depending on credit score, leverage, and debt burden. However, because the silhouette score was low, the clustering results should be treated as exploratory borrower profiling rather than a final segmentation model.
+
+Taken together, this project illustrates a simplified but grounded banking credit risk analytics workflow — combining **default prediction**, **model interpretation**, **borrower segmentation**, and a critical review of model limitations.
 
 ## Tech Stack
 
